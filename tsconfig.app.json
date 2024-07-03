@@ -1,0 +1,54 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "src/**/__tests__/*"
+  ],
+  "compilerOptions": {
+    // ====项目选项====
+    "declaration": true, // 生成声明文件，开启后会自动生成声明文件
+    "lib": [
+      "ESNext",
+      "DOM"
+    ], // 指定项目运行时使用的库
+    "target": "ESNext", // 指定 ts 编译成ES的版本
+    "module": "ESNext", // 指定编译后代码使用的模块化规范
+    "allowJs": false, // 是否对 js 文件进行编译
+    "importHelpers": true, // 是否将辅助函数从 tslib 模块导入
+    // ====Bundler mode====
+    "moduleResolution": "bundler", // 用于选择模块解析策略
+    "allowImportingTsExtensions": true, // 用于允许从没有默认导出的模块中默认导入
+    "verbatimModuleSyntax": true,
+    "noEmit": true, // 编译但不产生编译产物
+    // ====高级选项====
+    "strictPropertyInitialization": false, // 是否启用严格检查类的属性初始化
+    "skipLibCheck": true, // 是否跳过声明文件的类型检查，这可以在编译期间以牺牲类型系统准确性为代价来节省
+    "skipDefaultLibCheck": true, // 是否跳过默认库声明文件的类型检查
+    "forceConsistentCasingInFileNames": true, // 是否区分文件系统大小写规则
+    "resolveJsonModule": true, // 是否解析 JSON 模块
+    // ====严格检查====
+    "strict": true, // 是否严格模式
+    // ====附加检查====
+    "noImplicitOverride": true, // 是否检查子类继承自基类时，其重载的函数命名与基类的函数不同步问题
+    "noImplicitReturns": true, // 检查函数是否不含有隐式返回值
+    "noFallthroughCasesInSwitch": false, // 是否不允许 switch case 穿透
+    "noUnusedParameters": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "noEmitOnError": true, // 如果有编译错误不产生编译产物
+    // ====模块解析选项====
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "allowSyntheticDefaultImports": true, // 是否允许从没有默认导出的模块中默认导入
+    "esModuleInterop": true, // 允许 export= 导出，由 import from 导入
+    // ====Map 选项====
+    "sourceMap": true, // 编译时是否生成 .map 文件
+  },
+}
